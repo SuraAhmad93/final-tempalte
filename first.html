@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Online Exam </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+<!--     <link rel="stylesheet" href="css/bootstrap.css">
+ -->    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome-free-5.11.2-web/css/all.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #008C99" >
+         <h6 style="color: white" class="pl-5">Logic And Math Quiz</h6>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-center" id="navbarResponsive" >
+            <ul class="navbar-nav ml-auto">
+              <li  class="nav-item ">
+                <a id="color" class="nav-link pt-3 px-0 px-lg-3 text-white js-scroll-trigger font-weight-bolder"  href="about.html">LogOut</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+</header>
+
+<section>
+
+    <div class="container">
+        <h2 class="text-center mt-5" style="color: #008c99;">Welcome to the Exam</h2>
+        <form name="quizForm" onsubmit="return submitAnswers()">
+            <div class="row mt-5 p-5 rounded-pill" style="background-color: #008c99; font-size: 20px;">
+                <div class="col" id="q1">
+                    <label>Q1 : Which fraction is equivalent to 1\3 ? </label><br>
+                    <input type="radio" name="answer1" required="required" value="3/10"> 3/10<br>
+                    <input type="radio" name="answer1" required="required" value="5/15"> 5/15<br>
+                    <input type="radio" name="answer1" required="required" value="10/13"> 10/13<br>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <div class="row p-5 rounded-pill" style=" font-size: 20px">
+                <div class="col" id="q2">
+                    <label>Q2 : What is 4\20 in its simplest form ? </label><br>
+                    <input type="radio" name="answer2" required="required" value="1/4"> 1/4<br>
+                    <input type="radio" name="answer2" required="required" value="1/5"> 1/5<br>
+                    <input type="radio" name="answer2" required="required" value="2/10"> 2/10<br>
+                    <br>
+                </div>
+            </div>
+            <div class="row p-5 rounded-pill" style="background-color: #008c99; font-size: 20px">
+                <div class="col" id="q3">
+                    <label>Q3 : What is 15\4 as a mixed number ? </label><br>
+                    <input type="radio" name="answer3" required="required" value="3 1/4"> 3 1/4<br>
+                    <input type="radio" name="answer3" required="required" value="3 1/2"> 3 1/2<br>
+                    <input type="radio" name="answer3" required="required" value="3 3/4"> 3 3/4<br>
+                    <br>
+                </div>
+            </div>
+            <div class="row p-5 rounded-pill" style=" font-size: 20px">
+                <div class="col" id="q4">
+                    <label>Q4 : What is 1 3/4 as an improper fraction ? </label><br>
+                    <input type="radio" name="answer4" required="required" value="7/4"> 7/4<br>
+                    <input type="radio" name="answer4" required="required" value="8/4"> 8/4<br>
+                    <input type="radio" name="answer4" required="required" value="13/4"> 13/4<br>
+                    <br>
+                </div>
+            </div>
+            <div class="row p-5 rounded-pill" style="background-color: #008c99; font-size: 20px">
+                <div class="col" id="q5">
+                    <label>Q5 : Which is the biggest ? </label><br>
+                    <input type="radio" name="answer5" required="required" value="4/9"> 4/9<br>
+                    <input type="radio" name="answer5" required="required" value="1/3"> 1/3<br>
+                    <input type="radio" name="answer5" required="required" value="4/7"> 4/7<br>
+                    <br>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary ml-500 btn-lg text-center mt-5 mb-5" style="background-color:#008c99 ">Next</button>
+        </form>
+        <br>
+        
+
+
+    </div>
+</section>
+
+
+<div id="results"></div>
+
+
+
+
+<footer class=" mt-5 pt-2 text-white text-center"  style="background-color:  #008c99">
+    <div class="container text-center">
+      <div class="text-white text-center pb-3" style="background-color:  #008c99;">All material on this website is copyrighted.@Copy Write 2020</div>
+  </div>
+</footer>
+<script type="text/javascript">
+    function submitAnswers() {
+        var form = document.quizForm;
+        var q1 = form.elements['answer1'].value;
+        var q2 = form.elements['answer2'].value;
+        var q3 = form.elements['answer3'].value;
+        var q4 = form.elements['answer4'].value;
+        var q5 = form.elements['answer5'].value;
+        localStorage.setItem("answer1",q1);
+        localStorage.setItem("answer2",q2);
+        localStorage.setItem("answer3",q3);
+        localStorage.setItem("answer4",q4);
+        localStorage.setItem("answer5",q5);
+        var mark= 0 ;
+        if(q1 == "5/15"){
+            mark+=10;
+        }
+        if(q2 == "1/5"){
+            mark+=10;
+        }
+        if(q3 == "3 3/4"){
+            mark+=10;
+        }
+        if(q4 == "7/4"){
+            mark+=10;
+        }
+        if(q5 == "4/7"){
+            mark+=10;
+        }
+        localStorage.setItem("totalmark",mark);
+        window.location.href='second.html';
+        return false;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Online Exam / Result </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fontawesome-free-5.11.2-web/css/all.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	
+
+	<!-- <script type="text/javascript">
+		var result=parseInt(localStorage.getItem("totalmark2"));
+		document.Write(result);
+	</script> -->
+</head>
+<!-- <style type="text/css">
+  td,tr{
+    text-align: center;
+  }
+</style> -->
+<body>
+<header>
+		<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #008C99" >
+			<h6 style="color: white" class="pl-5">Logic And Math Quiz</h6>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse text-center" id="navbarResponsive" >
+				<ul class="navbar-nav ml-auto">
+					<li  class="nav-item ">
+						<a id="color" class="nav-link pt-3 px-0 px-lg-3 text-white js-scroll-trigger font-weight-bolder"  href="about.html">LogOut</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+ <div class="container mt-5 p-5">
+
+	<h2 id="show" class="text-center" style="color: #008C99"></h2>
+  <h2 id="show2" class="text-center" style="color: red"></h2>
+	<!-- <table class="table rounded text-white  mt-5" style="background-color: #008C99;font-size:20px">
+  <thead>
+    <tr>
+      <th scope="col">Q#</th>
+      <th scope="col">Correct Answer</th>
+      <th scope="col">Your Answer</th>    
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Q1</th>
+      <td class="ml-5">5/15</td>
+      <td id="a1"></td>   
+    </tr>
+    <tr>
+      <th scope="row">Q2</th>
+     <td>1/5</td>
+      <td id="a2"></td>     
+    </tr>
+    <tr>
+      <th scope="row">Q3</th>
+      <td>3 3/4</td>
+      <td id="a3"></td>
+    </tr>
+    <tr>
+      <th scope="row">Q4</th>
+      <td>7/4</td>
+      <td id="a4"></td> 
+    </tr>
+    <tr>
+      <th scope="row">Q5</th>
+      <td>4/7</td>
+      <td id="a5"></td>
+    </tr>
+    <tr>
+      <th scope="row">Q6</th>
+      <td>7/8</td>
+      <td id="a6"></td>
+    </tr>
+    <tr>
+      <th scope="row">Q7</th>
+     <td>22/45</td>
+      <td id="a7"></td>
+    </tr>
+    <tr>
+      <th scope="row">Q8</th>
+     <td>5/9</td>
+      <td id="a8"></td>
+    </tr>
+    <tr>
+      <th scope="row">Q9</th>
+      <td>2 4/5</td>
+      <td id="a9"></td>
+    </tr>
+    <tr>
+      <th scope="row">Q10</th>
+      <td>18/25</td>
+      <td id="a10"></td>
+    </tr>
+  </tbody>
+</table> -->
+    <!-- <button type="submit" onclick="back()" class="btn btn-primary ml-500 btn-lg text-center mt-5 mb-5" style="background-color:#008c99">Back</button>
+ -->
+
+</div>
+<!-- <footer class=" mt-5 pt-2 text-white text-center"  style="background-color:  #008C99">
+							<div class="container text-center">
+								<div class="text-white text-center pb-3" style="background-color:  #008C99">All material on this website is copyrighted.@Copy Write 2020</div>
+							</div>
+						</footer> -->
+<script type="text/javascript">
+
+		var ans1 = localStorage.getItem("answer1");	
+		var ans2 = localStorage.getItem("answer2");
+		var ans3 = localStorage.getItem("answer3");
+		var ans4 = localStorage.getItem("answer4");
+		var ans5 = localStorage.getItem("answer5");
+		var ans6 = localStorage.getItem("answer6");
+		var ans7 = localStorage.getItem("answer7");
+		var ans8 = localStorage.getItem("answer8");
+		var ans9 = localStorage.getItem("answer9");
+		var ans10 = localStorage.getItem("answer10");
+		var score=localStorage.getItem('totalmark2');
+
+      if(score==100||score>=90){
+        document.getElementById('show').innerHTML='<i class="fab fa-angellist"></i>Congarulation<i class="fab fa-angellist"></i>'+'<br>'+'Your score : '+score+ ' out of 100'+'<br>'+'You are excellent student in fraction <i class="far fa-grin-hearts"></i>';
+      }
+       if(score<=80||score>=70){
+        document.getElementById('show').innerHTML='<i class="fab fa-angellist"></i>Congarulation<i class="fab fa-angellist"></i>'+'<br>'+'Your score : '+score+ ' out of 100'+'<br>'+'You are very good student in fraction <i class="far fa-laugh-wink"></i>';
+      }
+      if(score<=60||score==50){
+        document.getElementById('show').innerHTML='<i class="fab fa-angellist"></i>Congarulation<i class="fab fa-angellist"></i>'+'<br>'+'Your score : '+score+ ' out of 100'+'<br>'+'You are good student in fraction but you should study well <i class="far fa-grin-alt"></i>';
+      }
+      // document.getElementById('show').innerHTML='Your score : '+score+ ' out of 100';
+	if(score<50){
+		document.getElementById('show').innerHTML='<i class="far fa-frown"></i> Sorry <i class="far fa-frown"></i>'+'<br>'+'Your score : '+score+ ' , you are failed'+'<br>'+'You should study hard to become excellent student in math'+'<br>'+'Good Luck <i class="far fa-thumbs-up"></i>';
+	}
+			document.getElementById('a1').innerHTML=ans1;
+			document.getElementById('a2').innerHTML=ans2;
+			document.getElementById('a3').innerHTML=ans3;
+			document.getElementById('a4').innerHTML=ans4;
+			document.getElementById('a5').innerHTML=ans5;
+			document.getElementById('a6').innerHTML=ans6;
+			document.getElementById('a7').innerHTML=ans7;
+			document.getElementById('a8').innerHTML=ans8;
+			document.getElementById('a9').innerHTML=ans9;
+			document.getElementById('a10').innerHTML=ans10;
+
+
+function back(){
+	window.location.href='about.html';
+}
+
+</script>
+</body>
+</html>
